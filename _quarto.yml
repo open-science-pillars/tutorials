@@ -4,6 +4,8 @@ book:
   title: "Open Science Pillars Tutorials"
   chapters:
     - index.qmd
+    - tutorial-1-getting-started.qmd
+    - tutorial-2-ecco-mht.qmd
 format:
   html:
     theme: cosmo

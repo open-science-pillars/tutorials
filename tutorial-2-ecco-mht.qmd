@@ -1,0 +1,122 @@
+---
+title: "Tutorial 2: ECCO Heat Transport, with a SWOT Coda"
+subtitle: "Real NASA ocean data: meridional heat transport at 26.5N against RAPID, plus a SWOT SSH scene (~20 minutes)"
+format: html
+---
+
+<!-- Surfaces verified: Claude Code 2026-07-05 (fresh data directory,
+     timed: 15.0 minutes end to end incl. ~1.3 GB downloads). Cowork and Claude Science:
+     pending; on surfaces without Earthdata credentials the workflow
+     runs through planning and gate presentation, which is the designed
+     behavior. -->
+
+**Surfaces verified:** Claude Code (2026-07-05). Cowork and Claude
+Science pending: without Earthdata credentials those surfaces exercise
+planning, gates, and reporting; the downloads and computation are
+Code-side.
+
+## What you will do
+
+Configure a project for ocean work, load real ECCO v4r4 data from
+PO.DAAC through the volume gate, compute Atlantic meridional heat
+transport at 26.5N with honest uncertainty framing, see the overturning
+structure, get a report with provenance, and load a SWOT swath scene.
+You need a (free) [Earthdata Login](https://urs.earthdata.nasa.gov) in
+`~/.netrc` and the ocean-science plugin:
+
+```bash
+claude plugin install ocean-science@open-science-pillars
+```
+
+## 1. Local config (2 minutes)
+
+Copy the template into your project and fill the data paths:
+
+> Set up an ocean-science local config here: ECCO data under
+> ~/ECCO_V4r4, 2 GB download gate, North Atlantic working box.
+
+The file it writes (`ocean-science.local.md`) is where the volume
+gate's threshold and your data directories live; loaders read it.
+
+## 2. Load ECCO through the gate (4 minutes)
+
+> Load the ECCO 3D temperature fluxes and grid geometry for 2010.
+
+What to watch: the request resolves to EXACT PO.DAAC ShortNames; the
+granule count and volume appear BEFORE any download (about 770 MB for
+this request, under your gate, so it proceeds with a statement); the
+grid geometry is auto-merged; and the summary restates the knowledge
+that applies (ECCO has no formal error fields; budgets need snapshots).
+The fresh pull of the 2010 fluxes plus geometry (about 800 MB) took
+under a minute on 2026-07-05; PO.DAAC's cloud egress is quick.
+
+## 3. Heat transport at 26.5N (6 minutes)
+
+> What is the Atlantic meridional heat transport at 26.5N in 2010, and
+> how does it compare with expectations?
+
+This is the tutorial's centerpiece, and it teaches the field's
+sharpest scope trap:
+
+- **Basin scope matters.** A latitude line without a basin mask is the
+  FULL circle, all oceans. The plugin's recipe records both 2010
+  anchors: Atlantic 0.666 PW, global circle 1.098 PW, and their sum
+  identity with the Pacific and Indian pieces. The RAPID-comparable
+  number is the Atlantic one. (This distinction was caught by the
+  project's own verification loop; the recipe documents the whole
+  story.)
+- **Expectations come from a validated recipe, not from memory:** the
+  multi-year Atlantic band (0.8-1.4 PW) and the RAPID comparison
+  spread (about +/-0.4 PW) are quoted with citations, and 2010 sits
+  low because it is the documented AMOC-minimum year, which the
+  analysis says rather than hides.
+- **Uncertainty framing:** ECCO ships no formal errors; the honest
+  envelope is the recipe's comparison spread, and the response says so
+  in as many words.
+
+Then see the vertical structure:
+
+> Show me the overturning streamfunction at 26.5N for 2010.
+
+## 4. The report (3 minutes)
+
+> Write this up as a report.
+
+The confirmation gate shows you the filename and sections BEFORE
+anything is written; the Results carry uncertainty statements on every
+headline number; Provenance cites the knowledge concepts consulted by
+bundle path. That report structure is enforced, not aspirational: the
+project's eval suite tests it.
+
+## 5. SWOT coda (4 minutes)
+
+> Load a SWOT sea surface height scene for the Gulf Stream from March
+> 2024 and summarize it.
+
+Watch three things: the volume gate presents granule counts and sizes
+first (a 3-day regional box is a handful of granules: ~9 MB each in
+the Basic tier, ~33 MB in Expert); the
+quality flags are decoded before any statistic (large masked
+fractions over a swath are NORMAL and the summary says why); the swath
+structure is preserved, nadir gap and all; and on current baselines the
+crossover calibration (height_cor_xover) is applied to ssha before
+statistics, per the dataset concept's known issue: uncorrected swath
+statistics carry a spurious cross-track ramp of order meters.
+
+**The orbit-phase note:** if your date range touches 2023, expect the
+assistant to stop you: SWOT flew a 1-day cal/val orbit until July 2023
+and the 21-day science orbit after, the two are not one record, and
+the cal/val data lives only in the Version D collections. That
+interruption is the knowledge layer working.
+
+## 6. Where to go next
+
+Ask your own question end to end ("How did the AMOC minimum of 2010
+look in ECCO versus RAPID?") and watch the plan-load-analyze-report
+pipeline run with the same guardrails. The knowledge bundle behind all
+of it, with evidence links on every claim, is in the
+[ocean-science repository](https://github.com/open-science-pillars/ocean-science).
+
+**Timing note:** executed fresh (empty data directory, plugins
+reinstalled) in 15.0 minutes on 2026-07-05 (measured), dominated by
+downloads and the transport computation.
