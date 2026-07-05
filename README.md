@@ -1,7 +1,16 @@
 # tutorials
 
-The Open Science Pillars tutorial book, authored in Quarto and rendered to
-the tutorials site. Placeholder skeleton from Session 1; content lands in
-Sessions 11-13 per SPECIFICATION.md v0.5.1 §7 (three tutorials, the
-arset-style applied-tutorial template, the demo script, and the WASM marimo
-companion). Build locally with `quarto render`. License: Apache-2.0.
+The Open Science Pillars tutorial book (Quarto): three timed,
+fresh-install-tested walkthroughs plus the demo assets.
+
+- Tutorial 1, Getting Started: measured 4.6 minutes fresh.
+- Tutorial 2, ECCO Heat Transport with a SWOT coda: measured 15.0
+  minutes fresh including downloads.
+- Tutorial 3, Build a Domain Plugin: measured 12.3 minutes
+  scaffold-to-installed.
+- demo/: the six-beat demo script and the browser-runnable WASM MHT
+  companion (no install, no credentials).
+
+Each tutorial header records the surfaces it has been verified on.
+Build locally with `quarto render`. Applied-tutorial authors start
+from `templates/arset-style.md`. License: Apache-2.0.
