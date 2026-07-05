@@ -1,0 +1,9 @@
+project:
+  type: book
+book:
+  title: "Open Science Pillars Tutorials"
+  chapters:
+    - index.qmd
+format:
+  html:
+    theme: cosmo

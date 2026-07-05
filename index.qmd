@@ -1,0 +1,7 @@
+# Open Science Pillars Tutorials {.unnumbered}
+
+Placeholder. Tutorials authored in Sessions 11-12 per SPECIFICATION.md
+v0.5.1 §7: Tutorial 1 (Getting Started, ~10 min), Tutorial 2 (ECCO
+meridional heat transport with the SWOT section, ~20 min), Tutorial 3
+(Build a Domain Plugin, ~30 min). Each tutorial header records the surfaces
+it was verified on. Tutorials are Quarto; verification and demos are marimo.
