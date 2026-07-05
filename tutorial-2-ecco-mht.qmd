@@ -21,12 +21,22 @@ Configure a project for ocean work, load real ECCO v4r4 data from
 PO.DAAC through the volume gate, compute Atlantic meridional heat
 transport at 26.5N with honest uncertainty framing, see the overturning
 structure, get a report with provenance, and load a SWOT swath scene.
-You need a (free) [Earthdata Login](https://urs.earthdata.nasa.gov) in
-`~/.netrc` and the ocean-science plugin:
+You need the ocean-science plugin, a Python environment with the ocean
+stack, and a (free) [Earthdata Login](https://urs.earthdata.nasa.gov):
 
 ```bash
 claude plugin install ocean-science@open-science-pillars
+pip install earthaccess ecco_v4_py xgcm xarray netcdf4 matplotlib
 ```
+
+Put your Earthdata credentials in `~/.netrc` (Claude can also prompt for
+them and write this file for you):
+
+```
+machine urs.earthdata.nasa.gov login YOUR_USERNAME password YOUR_PASSWORD
+```
+
+Then `chmod 600 ~/.netrc`. Credentials never go in a repo.
 
 ## 1. Local config (2 minutes)
 

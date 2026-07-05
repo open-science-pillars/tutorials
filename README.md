@@ -1,5 +1,7 @@
 # tutorials
 
+New to a term (surface, golden notebook, WASM)? See the [glossary](https://github.com/open-science-pillars/marketplace/blob/main/GLOSSARY.md).
+
 The Open Science Pillars tutorial book (Quarto): three timed,
 fresh-install-tested walkthroughs plus the demo assets.
 
@@ -8,7 +10,7 @@ fresh-install-tested walkthroughs plus the demo assets.
   minutes fresh including downloads.
 - Tutorial 3, Build a Domain Plugin: measured 12.3 minutes
   scaffold-to-installed.
-- demo/: the six-beat demo script and the browser-runnable WASM MHT
+- demo/: the six-beat demo script and the browser-runnable (WASM) meridional-heat-transport (MHT)
   companion (no install, no credentials).
 
 Each tutorial header records the surfaces it has been verified on.

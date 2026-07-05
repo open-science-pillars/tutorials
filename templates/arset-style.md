@@ -1,6 +1,6 @@
 # [Applied Tutorial Title]
 
-<!-- arset-style applied-tutorial template, SPEC v0.5.1 §7. ARSET
+<!-- arset-style applied-tutorial template, SPEC §7. ARSET
 materials are linked with credit, never vendored; exercise code informs
 recipes and goldens as an attributed source. -->
 

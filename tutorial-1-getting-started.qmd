@@ -32,10 +32,16 @@ On Cowork or Claude Science: add the marketplace
 `open-science-pillars/marketplace` in your plugin settings and install
 `core` from it.
 
-Python side (once): the analyses run in your Python environment;
-anything with `xarray`, `netcdf4`, `matplotlib`, and `pymannkendall`
-works. The project's reference environment is in the
-[implementation guide](https://github.com/open-science-pillars/marketplace/blob/main/docs/IMPLEMENTATION-GUIDE.md).
+Python side (once): the analyses run in your Python environment. For this
+tutorial you need `xarray`, `netcdf4`, `matplotlib`, and `pymannkendall`:
+
+```bash
+pip install xarray netcdf4 matplotlib pymannkendall
+```
+
+(Ocean tutorials add a few more packages, listed where they're used.) The
+[glossary](https://github.com/open-science-pillars/marketplace/blob/main/GLOSSARY.md#prerequisites-at-a-glance)
+has the full prerequisites at a glance.
 
 ## 2. Orient (1 minute)
 

@@ -1,14 +1,16 @@
 # Open Science Pillars Tutorials {.unnumbered}
 
 Hands-on walkthroughs for AI-assisted open science with the Open
-Science Pillars plugins, on Claude Code, Cowork, and Claude Science.
-Each tutorial header records which surfaces it has been verified on.
+Science Pillars plugins, on Claude Code, Cowork, and Claude Science
+(the three "surfaces"). Each tutorial header records which surfaces it
+has been verified on. New to a term? See the
+[glossary](https://github.com/open-science-pillars/marketplace/blob/main/GLOSSARY.md).
 
 - **Tutorial 1, Getting Started (~10 min):** install core, orient,
   quality-control a test dataset, and produce an anomaly analysis with
   the guardrails visible.
 - **Tutorial 2, ECCO Heat Transport (~20 min):** real PO.DAAC data
-  through the volume gate, Atlantic heat transport at 26.5N with
+  through the volume gate, Atlantic meridional heat transport (MHT) at 26.5N with
   honest uncertainty framing, a report with provenance, and a SWOT
   swath scene with the orbit-phase lesson.
 - **Tutorial 3, Build a Domain Plugin (~30 min):** scaffold from the
@@ -17,8 +19,8 @@ Each tutorial header records which surfaces it has been verified on.
   the teaching variant.
 
 **No-install demo:** the [browser-runnable MHT companion](demo/wasm/index.html)
-tells the 2010 AMOC-minimum story with the build's verified numbers,
-WASM in the page, nothing to set up (source: `demo/mht_wasm_demo.py`).
+tells the 2010 AMOC-minimum story (the Atlantic overturning circulation at a low) with the build's verified numbers,
+running in the page (WASM, so nothing to set up) (source: `demo/mht_wasm_demo.py`).
 
 Tutorials teach; the plugins' verification notebooks prove; the
 knowledge bundles remember. The three layers are inspectable in the
