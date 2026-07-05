@@ -16,6 +16,10 @@ Each tutorial header records which surfaces it has been verified on.
   concept, one green golden notebook, with the arset-style template for
   the teaching variant.
 
+**No-install demo:** the [browser-runnable MHT companion](demo/wasm/index.html)
+tells the 2010 AMOC-minimum story with the build's verified numbers,
+WASM in the page, nothing to set up (source: `demo/mht_wasm_demo.py`).
+
 Tutorials teach; the plugins' verification notebooks prove; the
 knowledge bundles remember. The three layers are inspectable in the
 [organization repositories](https://github.com/open-science-pillars).
