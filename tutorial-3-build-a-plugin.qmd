@@ -1,0 +1,99 @@
+---
+title: "Tutorial 3: Build a Domain Plugin"
+subtitle: "Scaffold, one skill, one evidence-linked concept, one green golden notebook (~30 minutes)"
+format: html
+---
+
+<!-- Surfaces verified: Claude Code 2026-07-05 (scaffold-to-installed,
+     12.3 minutes measured). Building plugins is a Code-side activity;
+     the plugin you build installs on all three surfaces. -->
+
+**Surfaces verified:** Claude Code. Building is Code-side; what you
+build installs everywhere.
+
+## What you will do
+
+Turn the plugin-template into a tiny working domain plugin: one
+workflow skill with a gate, one knowledge concept with real evidence,
+one golden notebook that runs green headless, installed and tested.
+The point is the SHAPE: after this, scaling up is repetition.
+
+## 1. Scaffold (3 minutes)
+
+```bash
+git clone https://github.com/open-science-pillars/plugin-template my-plugin
+cd my-plugin && rm -rf .git && git init -b main
+```
+
+Edit `.claude-plugin/plugin.json`: your plugin's name, a keyword-first
+description under 200 characters, your homepage. The layout you
+inherited is the whole contract: `skills/`, `knowledge/`,
+`verification/`, `evals/`, no `commands/` anywhere.
+
+## 2. One skill (8 minutes)
+
+Rename `skills/example-workflow` to something in your domain and
+rewrite its SKILL.md keeping the shape: frontmatter (name +
+description), a numbered behavior sequence with a
+**confirmation gate before any side effect**, and Must NOT rules. The
+[skill authoring guide](https://github.com/open-science-pillars/marketplace/blob/main/docs/skill-authoring-guide.md)
+carries the patterns; the annotated example you are editing explains
+each piece inline.
+
+## 3. One knowledge concept with evidence (8 minutes)
+
+Copy the matching example from the
+[knowledge-template](https://github.com/open-science-pillars/knowledge-template)
+(dataset, gotcha, recipe, or convention) into `knowledge/` and fill it
+with something TRUE about your domain: a real trap, with a real link
+that supports it. Rules that are enforced, not suggested: quote YAML
+values containing colons; every gotcha claim carries an evidence link;
+concepts state facts, never instructions to the agent; update
+`knowledge/index.md` and `log.md`. Lint it by asking Claude (with the
+core plugin installed) to run the knowledge-linter on your bundle.
+
+## 4. One golden notebook (6 minutes)
+
+Adapt `verification/example_workflow.py`: synthesize a small
+deterministic fixture in-notebook, run your skill's computation,
+assert the expected result AND its uncertainty range. Green means:
+
+```bash
+python verification/your_workflow.py; echo $?   # must print 0
+```
+
+A skill without a green golden is not done; that rule is what lets
+later refactors run fast.
+
+## 5. Install and test (5 minutes)
+
+Push to a Git host, then:
+
+```bash
+claude plugin marketplace add <your-github-user>/my-plugin
+claude plugin install my-plugin@<marketplace-name>
+```
+
+(or add the folder as a local marketplace). Open a fresh Claude Code
+session: your skill appears in `/skills`, invokes by slash and
+conversationally, and its gate fires before side effects. Ask a
+question your concept covers and watch it get cited.
+
+## The applied variant: teach it ARSET-style
+
+To turn your plugin into a training, fill the
+[arset-style template](https://github.com/open-science-pillars/tutorials/blob/main/templates/arset-style.md):
+objectives, audience, prerequisites (link ARSET Fundamentals where
+apt), 2-4 parts each with materials/steps/checkpoint, a hands-on
+exercise whose expected range comes from a recipe concept, and a
+completion checklist. That structure is how this project's own
+tutorials are tested: measurable outcomes, timed, verified surfaces
+recorded.
+
+**Timing note:** scaffold-to-installed measured at 12.3 minutes on
+2026-07-05, including linting the new bundle and negative-testing the
+golden; well inside the 30-minute target. Two ecosystem wrinkles you
+may hit: marketplace plugin sources must live at or below the
+marketplace directory (use `./plugin-name`, symlinking if needed), and
+`claude plugin update` is version-gated, so same-version refreshes need
+uninstall/reinstall.

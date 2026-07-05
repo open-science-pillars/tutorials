@@ -6,6 +6,7 @@ book:
     - index.qmd
     - tutorial-1-getting-started.qmd
     - tutorial-2-ecco-mht.qmd
+    - tutorial-3-build-a-plugin.qmd
 format:
   html:
     theme: cosmo

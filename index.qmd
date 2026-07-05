@@ -11,8 +11,10 @@ Each tutorial header records which surfaces it has been verified on.
   through the volume gate, Atlantic heat transport at 26.5N with
   honest uncertainty framing, a report with provenance, and a SWOT
   swath scene with the orbit-phase lesson.
-- **Tutorial 3, Build a Domain Plugin (~30 min):** arrives with
-  Session 12.
+- **Tutorial 3, Build a Domain Plugin (~30 min):** scaffold from the
+  template to an installed plugin: one gated skill, one evidence-linked
+  concept, one green golden notebook, with the arset-style template for
+  the teaching variant.
 
 Tutorials teach; the plugins' verification notebooks prove; the
 knowledge bundles remember. The three layers are inspectable in the
