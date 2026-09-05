@@ -1,6 +1,7 @@
 # [Applied Tutorial Title]
 
-<!-- arset-style applied-tutorial template, SPEC §7. ARSET
+<!-- arset-style applied-tutorial template (the specification's tutorials
+section, docs/SPECIFICATION.md in open-science-pillars/marketplace). ARSET
 materials are linked with credit, never vendored; exercise code informs
 recipes and goldens as an attributed source. -->
 
