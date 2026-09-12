@@ -1,10 +1,28 @@
 # Open Science Pillars Tutorials {.unnumbered}
 
 Hands-on walkthroughs for AI-assisted open science with the Open
-Science Pillars plugins, on Claude Code, Cowork, and Claude Science
-(the three "surfaces"). Each tutorial header records which surfaces it
-has been verified on. New to a term? See the
+Science Pillars capabilities. Each tutorial is one scientific workflow;
+the runtime you run it on is a setup choice, not a different tutorial,
+and each tutorial header records which runtimes it has been verified on.
+New to a term? See the
 [glossary](https://github.com/open-science-pillars/marketplace/blob/main/GLOSSARY.md).
+
+## Runtime setup
+
+- **Claude Code** (supported; every tutorial was measured here): add the
+  marketplace and install the capability the tutorial names, as its
+  first step shows.
+- **Claude Cowork** (tested): add `open-science-pillars/marketplace`
+  under Customize, Plugins, and install the same capability; the
+  conversational prompts in each tutorial are the ones to use, the
+  slash forms are Claude Code only.
+- **OpenAI Codex** (planned): arrives through the Agent Plugins
+  projection of each capability, not built yet; no tutorial claims it.
+- **Claude Science** (future runtime): the install path was observed in
+  the runtime testing guide; the tutorials do not yet claim it.
+
+What "supported", "tested" and "planned" assert is in the marketplace
+repository's `docs/runtime-distribution.md`.
 
 - **Tutorial 1, Getting Started (~10 min):** install core, orient,
   quality-control a test dataset, and produce an anomaly analysis with
@@ -22,6 +40,6 @@ has been verified on. New to a term? See the
 tells the 2010 AMOC-minimum story (the Atlantic overturning circulation at a low) with the build's verified numbers,
 running in the page (WASM, so nothing to set up) (source: `demo/mht_wasm_demo.py`).
 
-Tutorials teach; the plugins' verification notebooks prove; the
+Tutorials teach; the capabilities' verification notebooks prove; the
 knowledge bundles remember. The three layers are inspectable in the
 [organization repositories](https://github.com/open-science-pillars).

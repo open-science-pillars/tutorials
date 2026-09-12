@@ -1,6 +1,6 @@
 # tutorials
 
-New to a term (surface, golden notebook, WASM)? See the [glossary](https://github.com/open-science-pillars/marketplace/blob/main/GLOSSARY.md).
+New to a term (runtime, golden notebook, WASM)? See the [glossary](https://github.com/open-science-pillars/marketplace/blob/main/GLOSSARY.md).
 
 The Open Science Pillars tutorial book (Quarto): three timed,
 fresh-install-tested walkthroughs plus the demo assets.
@@ -13,6 +13,7 @@ fresh-install-tested walkthroughs plus the demo assets.
 - demo/: the six-beat demo script and the browser-runnable (WASM) meridional-heat-transport (MHT)
   companion (no install, no credentials).
 
-Each tutorial header records the surfaces it has been verified on.
+Each tutorial header records the runtimes it has been verified on; the
+index page has the setup per runtime.
 Build locally with `quarto render`. Applied-tutorial authors start
 from `templates/arset-style.md`. License: Apache-2.0.
