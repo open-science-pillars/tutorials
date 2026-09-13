@@ -12,14 +12,14 @@ New to a term? See the
 - **Claude Code** (supported; every tutorial was measured here): add the
   marketplace and install the capability the tutorial names, as its
   first step shows.
-- **Claude Cowork** (tested): add `open-science-pillars/marketplace`
-  under Customize, Plugins, and install the same capability; the
-  conversational prompts in each tutorial are the ones to use, the
-  slash forms are Claude Code only.
+- **Claude Cowork** (tested; per-release qualification in progress): add
+  `open-science-pillars/marketplace` under Customize, Plugins, and install
+  the same capability; the conversational prompts in each tutorial are the
+  ones to use, the slash forms are Claude Code only.
 - **OpenAI Codex** (planned): arrives through the Agent Plugins
   projection of each capability, not built yet; no tutorial claims it.
-- **Claude Science** (future runtime): the install path was observed in
-  the runtime testing guide; the tutorials do not yet claim it.
+- **Claude Science** (future runtime): not yet qualified; the tutorials do
+  not claim it.
 
 What "supported", "tested" and "planned" assert is in the marketplace
 repository's `docs/runtime-distribution.md`.

@@ -1,13 +1,14 @@
-# Demo script: the ECCO-to-report story (surface-neutral)
+# Demo script: the ECCO-to-report story (runtime-neutral)
 
-One take, about six minutes, runnable verbatim on Claude Code, Cowork,
-or Claude Science (on surfaces without Earthdata credentials the story
-plays through planning and gates, which is itself the point). Session
-13; the recording follows this script.
+This is the script of the recorded launch demo; the recording follows it.
+
+One take, about six minutes, runnable verbatim on Claude Code or Claude
+Cowork (on a runtime without Earthdata credentials the story plays
+through planning and gates, which is itself the point).
 
 ## Setup (before recording)
 
-Both plugins installed; a project directory with `ocean-science.local.md`
+The capabilities installed (core and ocean-science); a project directory with `ocean-science.local.md`
 filled (2 GB gate); on Code, the ECCO 2010 cache warm so downloads
 do not dominate the take.
 
