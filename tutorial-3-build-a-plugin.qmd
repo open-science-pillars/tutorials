@@ -4,12 +4,16 @@ subtitle: "Scaffold, one skill, one evidence-linked concept, one green golden no
 format: html
 ---
 
-<!-- Surfaces verified: Claude Code 2026-07-05 (scaffold-to-installed,
-     12.3 minutes measured). Building plugins is a Code-side activity;
-     the plugin you build installs on all three surfaces. -->
+<!-- Runtime status: Claude Code supported (measured 2026-07-05,
+     scaffold-to-installed, 12.3 minutes); Claude Cowork tested,
+     per-release qualification in progress; Claude Science future
+     runtime. Building plugins is a Code-side activity; the plugin you
+     build installs on every runtime it is qualified on. -->
 
-**Surfaces verified:** Claude Code. Building is Code-side; what you
-build installs everywhere.
+**Runtime status:** Claude Code supported (measured 2026-07-05); Claude
+Cowork tested, per-release qualification in progress; Claude Science a
+future runtime. Building is Code-side; what you build installs on every
+runtime it is qualified on.
 
 ## What you will do
 
@@ -25,10 +29,20 @@ git clone https://github.com/open-science-pillars/plugin-template my-plugin
 cd my-plugin && rm -rf .git && git init -b main
 ```
 
-Edit `.claude-plugin/plugin.json`: your plugin's name, a keyword-first
-description under 200 characters, your homepage. The layout you
-inherited is the whole contract: `skills/`, `knowledge/`,
-`verification/`, `evals/`, no `commands/` anywhere.
+Edit `.osp/package.yaml` (and `.osp/repository.yaml`): your plugin's
+name, a keyword-first description under 200 characters, your homepage.
+Then render the manifests from it with build-kit checked out beside your
+plugin:
+
+```bash
+uv run build-kit/scripts/osp.py render .
+```
+
+`.claude-plugin/plugin.json` and the portable `plugin.json` are generated
+from `package.yaml`, never edited by hand: the gate refuses a hand edit
+that disagrees with the canonical file. The layout you inherited is the
+whole contract: `skills/`, `knowledge/`, `verification/`, `evals/`, no
+`commands/` anywhere.
 
 ## 2. One skill (8 minutes)
 
@@ -36,7 +50,7 @@ Rename `skills/example-workflow` to something in your domain and
 rewrite its SKILL.md keeping the shape: frontmatter (name +
 description), a numbered behavior sequence with a
 **confirmation gate before any side effect**, and Must NOT rules. The
-[skill authoring guide](https://github.com/open-science-pillars/marketplace/blob/main/docs/skill-authoring-guide.md)
+[skill contribution guide](https://github.com/open-science-pillars/marketplace/blob/main/docs/contributing-a-skill.md)
 carries the patterns; the annotated example you are editing explains
 each piece inline.
 
@@ -59,7 +73,7 @@ deterministic fixture in-notebook, run your skill's computation,
 assert the expected result AND its uncertainty range. Green means:
 
 ```bash
-python verification/your_workflow.py; echo $?   # must print 0
+uv run verification/your_workflow.py; echo $?   # must print 0
 ```
 
 A skill without a green golden is not done; that rule is what lets
@@ -87,7 +101,7 @@ objectives, audience, prerequisites (link ARSET Fundamentals where
 apt), 2-4 parts each with materials/steps/checkpoint, a hands-on
 exercise whose expected range comes from a recipe concept, and a
 completion checklist. That structure is how this project's own
-tutorials are tested: measurable outcomes, timed, verified surfaces
+tutorials are tested: measurable outcomes, timed, verified runtimes
 recorded.
 
 **Timing note:** scaffold-to-installed measured at 12.3 minutes on

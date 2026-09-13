@@ -4,12 +4,15 @@ subtitle: "Install the core plugin, orient, and run your first honest analysis (
 format: html
 ---
 
-<!-- Surfaces verified: Claude Code 2026-07-05 (fresh install, timed: 4.6 minutes end to end).
-     Cowork and Claude Science: pending; conversational phrasings below
-     are the surface-parity prompts from marketplace/docs/prompts/. -->
+<!-- Runtime status: Claude Code supported (measured 2026-07-05, fresh
+     install, 4.6 minutes end to end); Claude Cowork tested, per-release
+     qualification in progress; Claude Science future runtime. The
+     conversational phrasings below are the runtime-parity prompts from
+     marketplace/docs/prompts/. -->
 
-**Surfaces verified:** Claude Code (2026-07-05). Cowork and Claude
-Science pending; every step below works conversationally, and the exact
+**Runtime status:** Claude Code supported (measured 2026-07-05); Claude
+Cowork tested, per-release qualification in progress; Claude Science a
+future runtime. Every step below works conversationally, and the exact
 phrasings are the ones the project tests with.
 
 ## What you will do
@@ -28,9 +31,8 @@ claude plugin marketplace add open-science-pillars/marketplace
 claude plugin install core@open-science-pillars
 ```
 
-On Cowork or Claude Science: add the marketplace
-`open-science-pillars/marketplace` in your plugin settings and install
-`core` from it.
+On Claude Cowork: add the marketplace `open-science-pillars/marketplace`
+in your plugin settings and install `core` from it.
 
 Python side (once): the analyses run in your Python environment. For this
 tutorial you need `xarray`, `netcdf4`, `matplotlib`, and `pymannkendall`:
